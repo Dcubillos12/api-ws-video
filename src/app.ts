@@ -19,11 +19,8 @@ const main = async () => {
     handleCtx(async (bot, req, res) => {
       const phone = req.phone;
       const message = req.message;
-      const mediaURl = req.mediaUrl;
-      // console.log(body)
-      await bot.sendMessage(phone, message, {
-        media: mediaURl
-      });
+
+      await bot.sendMessage(phone, message, {});
       res.end("Esto es del server polka");
     })
   );
