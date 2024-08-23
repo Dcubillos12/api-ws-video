@@ -17,8 +17,7 @@ const main = async () => {
   provider.http?.server.post(
     "/send-message",
     handleCtx(async (bot, req, res) => {
-      const phone = req.phone;
-      const message = req.message;
+      const { phone , message} = req.body;     
 
       await bot.sendMessage(phone, message, {});
       res.end("Esto es del server polka");
